@@ -1,0 +1,74 @@
+database setup
+
+rest api's for crud
+
+index route -> get /listings -> all listings
+
+show route -> /listings/:id ->all data
+
+ejs mate -> package .json -> install ejs-mate 
+create layout remove duplicacy from ejs files
+
+middlewares ->
+req aane aur res jaane ke beech mien call hote hain
+chaining possible
+send a response
+
+two steps -> send response , next ko call kre
+
+main kaam hai next ko call krna
+
+middleware humesha run krega
+
+creating utility middleware -> 
+
+loggers -> used for logging , useful information ko print krna
+
+
+validation -> client - > frontend se backend bhejne wala data shi hone chahiye we use form validation in this 
+
+server ->ensure database schema is followed db(schema)/errors handle 
+
+client side validation -> frontend se backend bhejne wala data shi hone chahiye we use form
+
+server side error handling
+
+wrapAsync
+Custom expressError 
+validation for schema -> joi
+
+
+query middleware in mongoose used for deletion
+
+
+
+----------------------
+
+
+new model reviews
+    comment -> string 
+    rating( 1 to 5) -> number 
+    createdAt -> DateAndTime (we will not use it now)
+
+
+setting up the review form
+
+submitting the form -> POST /listings/:id/reviews
+
+validation for reviews -> joi (server side)
+                                -> joi schema
+                                -> schema validation function
+                                -> middleware
+    -> form ( client side)
+
+render reviews -> show listings
+
+adding style
+
+delete individual reviews -> Mongo $pull operator
+
+deleting Listing : delete middleware for reviews
+
+-------------------------------
+
+restructuring listings using router
