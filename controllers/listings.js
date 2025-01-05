@@ -30,7 +30,7 @@ module.exports.showListing=async (req, res) => {
         req.flash("error","Listing you requested for does not exist");
         res.redirect("/listings");
     }
-    console.log(listing)
+    // console.log(listing)
     res.render("./listings/show.ejs", { listing });
 
 }
@@ -98,3 +98,18 @@ module.exports.deleteListing=async (req, res) => {
     req.flash("success","Listing Deleted")
     res.redirect("/listings");
     }
+
+// search route -> to search for listings
+
+module.exports.searchListing=async(req,res)=>{
+    let countryName=req.body.search;
+    let allListings=await Listing.find({country:countryName})
+    if(allListings && allListings.length > 0){
+        res.render("./listings/search.ejs",{allListings})
+    }
+    else{
+        req.flash("error","No listings found");
+        res.redirect("/listings");
+        }
+    
+}

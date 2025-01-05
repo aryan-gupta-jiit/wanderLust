@@ -40,4 +40,8 @@ router
 
 router.get("/:id/edit", isLoggedIn, isOwner, wrapAsync(listingController.editListing))
 
+// Search Route
+
+router.post("/search",wrapAsync(listingController.searchListing))
+
 module.exports = router;
